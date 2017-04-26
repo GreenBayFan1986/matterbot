@@ -28,8 +28,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -39,7 +39,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -160,6 +160,8 @@
   <ItemGroup>
     <ClCompile Include="ConsoleLogger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Md5.cpp" />
+    <ClCompile Include="Md5Utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Matterbot\Matterbot.vcxproj">
@@ -169,7 +171,15 @@
   <ItemGroup>
     <ClInclude Include="EchoCommand.h" />
     <ClInclude Include="ConsoleLogger.h" />
+    <ClInclude Include="GreenBayQuarterbacksCommand.h" />
+    <ClInclude Include="Md5.h" />
+    <ClInclude Include="Md5Utilities.h" />
     <ClInclude Include="ReverseCommand.h" />
+    <ClInclude Include="Create_md5_hash.h" />
+    <ClInclude Include="rivestment_challenge.h" />
+    <ClInclude Include="rivestment_command.h" />
+    <ClInclude Include="rivestment_password.h" />
+    <ClInclude Include="WeatherCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -4,6 +4,11 @@
 #include "ConsoleLogger.h"
 #include "EchoCommand.h"
 #include "ReverseCommand.h"
+#include "WeatherCommand.h"
+#include "GreenBayQuarterbacksCommand.h"
+#include "Create_md5_hash.h"
+#include "rivestment_challenge.h"
+#include "rivestment_command.h"
 
 #define ERROR_SUCCESS 0
 #define ERROR_FAILURE -1
@@ -13,9 +18,9 @@ using namespace lospi;
 
 int main() {
   wstring mattermost_url = L"https://hooks.slack.com",
-    incoming_hook_route = L"services/AAAAAAA/BBBBBBBBB/CCCCCCCCCCCCCCCCCCCC",
-    outgoing_hook_route = L"http://127.0.0.1:8000/",
-    outgoing_hook_token = L"XXXXXXXXXXXXXXXXXXXXX",
+    incoming_hook_route = L"",
+    outgoing_hook_route = L"",
+    outgoing_hook_token = L"",
     welcome_message = L"bot is running.";
 
   try {
@@ -23,6 +28,12 @@ int main() {
     bot->set_logger(make_unique<ConsoleLogger>());
     bot->register_command(make_shared<EchoCommand>());
     bot->register_command(make_shared<ReverseCommand>(bot));
+	bot->register_command(make_shared<WeatherCommand>());
+	bot->register_command(make_shared<GreenBay_QuarterbacksCommand>());
+	bot->register_command(make_shared<Create_md5_hash>());
+	bot->register_command(make_shared<rivestment_password>());
+	bot->register_command(make_shared<rivestment_challenge>());
+	bot->register_command(make_shared<rivestment_command>());
     bot->post_message(welcome_message);
 
     wstring console;
