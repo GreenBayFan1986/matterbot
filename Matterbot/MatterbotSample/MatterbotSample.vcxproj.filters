@@ -62,6 +62,9 @@
     <ClInclude Include="rivestment_command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="rivestment_scraps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -8,15 +8,15 @@
 
 namespace lospi
 {
-	struct rivestment_challenge : ICommand 
+	struct rivestment_scraps : ICommand
 	{
-		explicit rivestment_challenge(std::shared_ptr<Matterbot> bot) : bot{ bot } { }
-		std::wstring get_name() override { return L"challenges";}
+		explicit rivestment_scraps(std::shared_ptr<Matterbot> bot) : bot{ bot } { }
+		std::wstring get_name() override { return L"scraps"; }
 
-		std::wstring get_help() override { return L"`challenges` will attempt to solve the password for the given hashes";}
+		std::wstring get_help() override { return L"`scraps` will attempt to solve the password for the given hashes"; }
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
-			const std::wstring &user, const std::wstring &command_text) override 
+			const std::wstring &user, const std::wstring &command_text) override
 		{
 
 			if (user == L"greenbayfan1986" || user == L"rivestment")
@@ -25,10 +25,11 @@ namespace lospi
 				///////////////////////////////////////// Find the password by comparing /////////////////////////////////////////
 				////////////////////////////////// hash map and the challenge from rivestment ////////////////////////////////////
 				//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				_sleep(1050);
 
 				std::wstring return_passwords = L"rivestment try";							// used to return the try to rivestment
 
-				// load hashes provided by rivestment into a vector
+																							// load hashes provided by rivestment into a vector
 				std::wstring input;
 				std::wistringstream rivestment_input{ command_text };
 				while (getline(rivestment_input, input, L' ')) {
@@ -51,7 +52,7 @@ namespace lospi
 
 
 				bot->post_message(return_passwords);
-				_sleep(1250);
+				_sleep(1050);
 				return L"rivestment challenge " + rivestment_tries;
 
 				//////////////////////////////////////////////////////////////////////////////////////////////////////////////////

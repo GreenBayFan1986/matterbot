@@ -14,7 +14,15 @@ namespace lospi
 
 		std::wstring handle_command(const std::wstring &team, const std::wstring &channel,
 			const std::wstring &user, const std::wstring &command_text) override {
-			return command_text;
+
+			if (user == L"greenbayfan1986")
+			{
+				return command_text;
+			}
+			else
+			{
+				return L"invalid user";
+			}
 		}
 	};
 }

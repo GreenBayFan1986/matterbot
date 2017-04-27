@@ -179,6 +179,7 @@
     <ClInclude Include="rivestment_challenge.h" />
     <ClInclude Include="rivestment_command.h" />
     <ClInclude Include="rivestment_password.h" />
+    <ClInclude Include="rivestment_scraps.h" />
     <ClInclude Include="WeatherCommand.h" />
   </ItemGroup>
   <ItemGroup>
